@@ -1,0 +1,34 @@
+{
+  "name": "pc-admin",
+  "version": "1.0.0",
+  "description": "PC Admin",
+  "license": "ISC",
+  "author": "vlashex",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm run build-ui && electron-forge start",
+    "dev": "npm run build-ui && electron-forge start",
+    "dev:hot": "cross-env NODE_ENV=development electron-forge start",
+    "build-ui": "cd frontend && npm run build",
+    "dev-ui": "cd frontend && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "npm run build-ui && electron-forge package",
+    "make": "npm run build-ui && electron-forge make"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.8.3",
+    "@electron-forge/maker-deb": "^7.8.3",
+    "@electron-forge/maker-rpm": "^7.8.3",
+    "@electron-forge/maker-squirrel": "^7.8.3",
+    "@electron-forge/maker-zip": "^7.8.3",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.3",
+    "@electron-forge/plugin-fuses": "^7.8.3",
+    "@electron/fuses": "^1.8.0",
+    "cross-env": "^7.0.3",
+    "electron": "^37.3.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
+  }
+}
