@@ -21,15 +21,16 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
     
-  },
-  "include": ["src"],
-
-  "baseUrl": ".",
+    // Ensure TS recognizes path alias '@'
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
       ]
     }
+  },
+  "include": ["src"],
+
 }

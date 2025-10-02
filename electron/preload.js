@@ -1,5 +1,10 @@
-const { contextBridge } = require("electron");
+const { contextBridge, ipcRenderer } = require("electron");
 
 contextBridge.exposeInMainWorld("electron", {
-  runBashCommand: (command) => ipcRenderer.invoke("run-bash-command", command),
+  startTailscale: () => ipcRenderer.invoke("start-tailscale"),
+  stopTailscale: () => ipcRenderer.invoke("stop-tailscale"),
+  getTailscaleStatus: () => ipcRenderer.invoke("get-tailscale-status"),
+  getTailscaleConntectionStatus: () =>
+    ipcRenderer.invoke("get-tailscale-connection-status"),
+  sendFlagRequest: () => ipcRenderer.invoke("send-flag-request"),
 });

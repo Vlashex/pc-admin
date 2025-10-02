@@ -7,14 +7,13 @@
   "type": "commonjs",
   "main": "main.js",
   "scripts": {
-    "start": "npm run build-ui && electron-forge start",
-    "dev": "npm run build-ui && electron-forge start",
-    "dev:hot": "cross-env NODE_ENV=development electron-forge start",
-    "build-ui": "cd frontend && npm run build",
-    "dev-ui": "cd frontend && npm run dev",
+    "dev": "cross-env NODE_ENV=development electron-forge start",
+    "dev-ui": "cd ../renderer && npm run dev",
+    "start": "electron-forge start",
+    "build-ui": "cd ../renderer && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "npm run build-ui && electron-forge package",
-    "make": "npm run build-ui && electron-forge make"
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.8.3",
@@ -26,9 +25,11 @@
     "@electron-forge/plugin-fuses": "^7.8.3",
     "@electron/fuses": "^1.8.0",
     "cross-env": "^7.0.3",
-    "electron": "^37.3.1"
+    "electron": "^37.6.0"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+    "dotenv": "^16.4.5",
+    "electron-squirrel-startup": "^1.0.1",
+    "iconv-lite": "^0.7.0"
   }
 }
