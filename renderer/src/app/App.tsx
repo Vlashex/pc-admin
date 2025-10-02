@@ -5,6 +5,7 @@ import { Loader2, Network, Send } from "lucide-react";
 import { ActionButton } from "@/components/ActionButton";
 import { StatusCard } from "@/components/StatusCard";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { JsonCard } from "@/components/JsonCard";
 
 function App() {
   const [{ isActive, ping, loss }, setConnectionStatus] = useState<{
@@ -131,22 +132,10 @@ function App() {
         </div>
 
         {response && (
-          <Card className="border border-success">
-            <CardHeader>
-              <CardTitle className="text-success">Response</CardTitle>
-            </CardHeader>
-            <CardContent>{response}</CardContent>
-          </Card>
+          <JsonCard title="Response" data={response} variant="success" />
         )}
 
-        {error && (
-          <Card className="border border-destructive">
-            <CardHeader>
-              <CardTitle className="text-destructive">Error</CardTitle>
-            </CardHeader>
-            <CardContent>{error}</CardContent>
-          </Card>
-        )}
+        {error && <JsonCard title="Error" data={error} variant="destructive" />}
       </main>
     </div>
   );
