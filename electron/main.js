@@ -112,7 +112,7 @@ const stopTailscale = async () => {
 // Функция для получения статуса Tailscale
 const getTailscaleConntectionStatus = async () => {
   return new Promise((resolve) => {
-    exec(`ping -n 4 100.64.0.3`, { encoding: "buffer" }, (err, stdout) => {
+    exec(`ping -n 4 100.64.0.8`, { encoding: "buffer" }, (err, stdout) => {
       // Перекодируем cp866 → utf8
       const text = iconv.decode(stdout, "cp866");
 
